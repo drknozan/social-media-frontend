@@ -1,0 +1,51 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.button {
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
+  color: $color-primary;
+  letter-spacing: 0.5px;
+  transition: all 0.1s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.sm {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.md {
+  width: 8rem;
+  height: 4rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+
+.primary {
+  border: 1px solid transparent;
+  background-color: $color-primary;
+  color: $color-text-light;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.secondary {
+  border: 1px solid $color-grey-light;
+  background-color: transparent;
+  color: $color-primary;
+
+  &:hover {
+    background-color: $color-grey-light;
+  }
+}
