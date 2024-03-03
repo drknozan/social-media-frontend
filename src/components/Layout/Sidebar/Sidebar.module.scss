@@ -1,0 +1,72 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.container {
+  position: fixed;
+  top: 7.7rem;
+  left: -100%;
+  width: 20rem;
+}
+
+.containerActive {
+  position: fixed;
+  background-color: white;
+  top: 7.7rem;
+  width: 15rem;
+  height: calc(100vh - 7.5rem);
+  border-right: 1px solid $color-grey-light;
+  z-index: 99;
+  left: 0;
+  transition: all 0.3s;
+
+  @include breakpoint(md) {
+    width: 20rem;
+  }
+
+  @include breakpoint(lg) {
+    width: 24rem;
+  }
+}
+
+.buttonGroupContainer {
+  display: flex;
+  flex-direction: column;
+  padding: $base-padding;
+
+  > * {
+    margin-bottom: 1rem;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: $color-text-light;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  color: $color-primary;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  text-align: left;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-grey-light;
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @include breakpoint(md) {
+    font-size: $default-font-size;
+  }
+}
