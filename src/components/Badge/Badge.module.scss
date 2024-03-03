@@ -1,0 +1,23 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.badge {
+  font-size: $default-font-size;
+  color: $color-text-primary;
+  background-color: $color-grey-light;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  display: inline;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-grey-light;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
