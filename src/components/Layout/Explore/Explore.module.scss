@@ -1,0 +1,61 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  display: none;
+  position: fixed;
+  top: 7.5rem;
+  right: 0;
+  width: 24rem;
+  height: calc(100vh - 7.5rem);
+  border-left: 1px solid $color-grey-light;
+  z-index: 10;
+  overflow-y: auto;
+
+  h1 {
+    margin-top: $base-margin;
+    color: $color-text-dark;
+    font-size: $default-font-size;
+    text-align: center;
+  }
+
+  @include breakpoint(lg) {
+    display: block;
+  }
+}
+
+.communitiesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $base-padding;
+}
+
+.divider {
+  height: 0.1rem;
+  margin: 0 $base-margin;
+  background-color: $color-grey-light;
+}
+
+.usersContainer {
+  padding: $base-padding;
+  margin-top: 1rem;
+
+  > * {
+    margin-bottom: $base-margin;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    font-size: $default-font-size;
+    color: $color-text-dark;
+  }
+}
