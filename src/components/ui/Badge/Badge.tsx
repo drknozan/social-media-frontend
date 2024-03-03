@@ -1,14 +1,17 @@
 import styles from './Badge.module.scss';
+import React from 'react';
 
-interface BadgeProps {
+interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string;
   onClick?: () => void;
 }
 
-export const Badge = ({ text, onClick }: BadgeProps) => {
+const Badge = ({ text, ...props }: BadgeProps) => {
   return (
-    <div onClick={onClick} className={styles.badge}>
+    <div className={styles.badge} {...props}>
       {text}
     </div>
   );
 };
+
+export default Badge;
