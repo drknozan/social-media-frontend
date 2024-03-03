@@ -1,0 +1,43 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: $base-padding;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid $color-grey-light;
+}
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-primary;
+  font-size: 1.6rem;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.logo {
+  margin-left: $base-margin;
+}
+
+.search {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+  }
+}
