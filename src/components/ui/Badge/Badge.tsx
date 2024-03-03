@@ -5,12 +5,10 @@ interface BadgeProps {
   onClick?: () => void;
 }
 
-const Badge = ({ text, onClick }: BadgeProps) => {
+export const Badge = ({ text, onClick }: BadgeProps) => {
   return (
     <div onClick={onClick} className={styles.badge}>
       {text}
     </div>
   );
 };
-
-export default Badge;
