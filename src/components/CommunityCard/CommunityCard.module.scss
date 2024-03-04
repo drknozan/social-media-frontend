@@ -1,0 +1,64 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: $base-padding;
+  margin: $base-margin;
+  border-bottom: 1px solid $color-grey-light;
+  border-radius: 3px;
+}
+
+.communityInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $base-margin;
+  width: 50%;
+}
+
+.communityName {
+  font-size: 2rem;
+  color: $color-primary;
+}
+
+.line {
+  height: 0.1rem;
+  background-color: $color-text-light;
+}
+
+.communityDescription {
+  font-size: 1.4rem;
+  color: $color-text-dark;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.membersInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  color: $color-text-dark;
+}
+
+.memberCount {
+  color: $color-primary;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.creationInfo {
+  display: flex;
+  flex-direction: column;
+  color: $color-text-dark;
+  font-size: 1.4rem;
+}
+
+.creationDate {
+  color: $color-primary;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
