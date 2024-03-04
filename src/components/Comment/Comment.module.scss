@@ -1,0 +1,43 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: $base-padding;
+  margin: $base-margin;
+
+  > * {
+    margin-bottom: $base-margin;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.username {
+  font-size: 1.4rem;
+  color: $color-text-dark;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.content {
+  font-size: 1.4rem;
+  color: $color-text-dark;
+}
+
+.date {
+  font-size: 1.2rem;
+  color: $color-text-dark;
+}
+
+.line {
+  height: 0.1rem;
+  background-color: $color-text-light;
+  margin-bottom: $base-margin;
+}
