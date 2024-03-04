@@ -1,0 +1,63 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  padding: $base-padding;
+  margin: $base-margin;
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
+}
+
+.communityName {
+  display: inline-block;
+  margin-bottom: $base-margin;
+  color: $color-text-dark;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.title {
+  margin-bottom: $base-margin;
+  color: $color-text-dark;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.line {
+  height: 0.1rem;
+  margin-bottom: $base-margin;
+  background-color: $color-text-light;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: $base-margin;
+}
+
+.username {
+  margin-right: $base-margin;
+  color: $color-text-dark;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.content {
+  color: $color-text-dark;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: $base-margin;
+}
+
+.date {
+  color: $color-text-dark;
+  font-size: 1.4rem;
+}
