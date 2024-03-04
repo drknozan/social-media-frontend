@@ -1,0 +1,77 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: $base-padding;
+  margin: $base-margin;
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: $base-margin;
+  width: 50%;
+}
+
+.username {
+  font-size: 2rem;
+  color: $color-primary;
+}
+
+.line {
+  height: 0.1rem;
+  background-color: $color-text-light;
+}
+
+.userBio {
+  font-size: 1.4rem;
+  color: $color-text-dark;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.followerInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  color: $color-text-dark;
+}
+
+.followerCount {
+  color: $color-primary;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.followedInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  color: $color-text-dark;
+}
+
+.followedCount {
+  color: $color-primary;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.creationInfo {
+  display: flex;
+  flex-direction: column;
+  color: $color-text-dark;
+  font-size: 1.4rem;
+}
+
+.creationDate {
+  color: $color-primary;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
