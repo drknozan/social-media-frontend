@@ -3,20 +3,45 @@
 
 .input {
   padding: 1rem;
-  border-top: 1px solid $color-grey-light;
-  border-bottom: 1px solid $color-grey-light;
-  border-left: 1px solid $color-grey-light;
-  border-right: none;
-  border-radius: 3px 0 0 3px;
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
   outline: none;
   color: $color-text-dark;
   font-size: $default-font-size;
+}
+
+.sm {
+  width: 15rem;
 
   @include breakpoint(md) {
-    width: 35rem;
+    width: 25rem;
   }
 
   @include breakpoint(lg) {
+    width: 30rem;
+  }
+}
+
+.md {
+  width: 20rem;
+
+  @include breakpoint(md) {
+    width: 30rem;
+  }
+
+  @include breakpoint(lg) {
+    width: 35rem;
+  }
+}
+
+.lg {
+  width: 20rem;
+
+  @include breakpoint(md) {
     width: 40rem;
+  }
+
+  @include breakpoint(lg) {
+    width: 45rem;
   }
 }
