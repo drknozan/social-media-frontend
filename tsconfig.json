@@ -24,7 +24,8 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@ui/*": ["src/components/ui/*"],
-      "@Layout/*": ["src/components/Layout/*"]
+      "@layout/*": ["src/components/Layout/*"],
+      "@pages/*": ["src/pages/*"]
     }
   },
   "include": ["src"],
