@@ -2,16 +2,16 @@
 @import '../../../styles/variables';
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   border: 1px solid $color-grey-light;
   border-radius: 3px;
   color: $color-primary;
   letter-spacing: 0.5px;
   transition: all 0.1s;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
 
   &:active {
     transform: scale(0.95);
@@ -47,5 +47,19 @@
 
   &:hover {
     background-color: $color-grey-light;
+  }
+}
+
+.loading {
+  width: 10rem;
+  opacity: 0.6;
+  cursor: not-allowed;
+
+  &:active {
+    transform: none;
+  }
+
+  &:hover {
+    opacity: 0.6;
   }
 }
