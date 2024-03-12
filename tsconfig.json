@@ -25,7 +25,11 @@
       "@components/*": ["src/components/*"],
       "@ui/*": ["src/components/ui/*"],
       "@layout/*": ["src/components/Layout/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@api/*": ["src/api/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@src/types/*": ["src/types/*"],
+      "@store/*": ["src/store/*"]
     }
   },
   "include": ["src"],
