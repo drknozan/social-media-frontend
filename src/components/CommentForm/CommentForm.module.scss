@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: $base-margin;
+  padding: $base-padding;
+}
+
+.error {
+  color: $color-error;
+  font-size: 1.2rem;
+}
