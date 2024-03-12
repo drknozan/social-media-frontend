@@ -11,7 +11,7 @@
 .communityName {
   display: inline-block;
   margin-bottom: $base-margin;
-  color: $color-text-dark;
+  color: $color-primary;
   font-size: 1.6rem;
   letter-spacing: 0.5px;
   line-height: 1.4;
@@ -29,6 +29,7 @@
   font-size: 2rem;
   letter-spacing: 0.5px;
   line-height: 1.4;
+  cursor: pointer;
 }
 
 .line {
@@ -55,6 +56,7 @@
   font-size: 1.4rem;
   line-height: 1.5;
   margin-bottom: $base-margin;
+  cursor: pointer;
 }
 
 .date {
