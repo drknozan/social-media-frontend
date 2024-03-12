@@ -1,0 +1,38 @@
+@import '../../../styles/variables';
+
+.alert {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $color-text-light;
+  padding: $base-padding;
+  border-radius: 3px;
+  font-size: $default-font-size;
+  animation: slideIn 0.5s;
+}
+
+.default {
+  background-color: $color-primary;
+}
+
+.error {
+  background-color: $color-error;
+}
+
+.success {
+  background-color: $color-success;
+}
+
+.warning {
+  background-color: $color-warning;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
