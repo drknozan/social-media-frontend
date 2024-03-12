@@ -1,0 +1,16 @@
+@import '../../../styles/variables';
+
+.select {
+  height: 4rem;
+  padding: 1rem;
+  font-size: $default-font-size;
+  border: 1px solid $color-grey-light;
+  color: $color-text-dark;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+}
