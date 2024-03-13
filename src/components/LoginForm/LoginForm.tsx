@@ -5,7 +5,7 @@ import Input from '@components/ui/Input';
 import Button from '@components/ui/Button';
 import { Link } from 'react-router-dom';
 
-const LoginForm = () => {
+const LoginForm = ({ onSubmit }: { onSubmit: ({ email, password }: { email: string; password: string }) => void }) => {
   const initialValues = {
     email: '',
     password: '',
@@ -19,13 +19,9 @@ const LoginForm = () => {
       .required('Password is required'),
   });
 
-  const handleSubmit = ({ email, password }: { email: string; password: string }) => {
-    console.log(email, password);
-  };
-
   return (
     <div className={styles.container}>
-      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
         {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
           <form className={styles.form} onSubmit={handleSubmit}>
             <h1>Login</h1>
@@ -53,7 +49,7 @@ const LoginForm = () => {
               />
               <ErrorMessage name="password" component="div" className={styles.error} />
             </div>
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" loading={isSubmitting}>
               Login
             </Button>
             <Link to="/register" className={styles.link}>
