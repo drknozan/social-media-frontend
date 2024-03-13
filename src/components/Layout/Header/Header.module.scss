@@ -41,3 +41,13 @@
     display: block;
   }
 }
+
+.user {
+  font-size: $default-font-size;
+  color: $color-text-dark;
+  border: 1px solid $color-grey-light;
+  padding: 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+}

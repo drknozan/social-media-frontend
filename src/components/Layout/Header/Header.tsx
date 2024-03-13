@@ -1,10 +1,15 @@
 import SearchBar from '@components/SearchBar';
-import Button from '@ui/Button';
 import styles from './Header.module.scss';
-import { MenuOutlined, UserOutlined } from '@ant-design/icons';
+import { MenuOutlined } from '@ant-design/icons';
 import { Dispatch, SetStateAction } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@store/store';
+import { Link, createSearchParams, useNavigate } from 'react-router-dom';
 
 const Header = ({ setShowSidebar }: { setShowSidebar: Dispatch<SetStateAction<boolean>> }) => {
+  const navigate = useNavigate();
+  const { user } = useSelector((state: RootState) => state.auth);
+
   return (
     <div className={styles.container}>
       <div className={styles.toggleContainer}>
@@ -14,13 +19,15 @@ const Header = ({ setShowSidebar }: { setShowSidebar: Dispatch<SetStateAction<bo
         <div className={styles.logo}>SOCIAL MEDIA</div>
       </div>
       <div className={styles.search}>
-        <SearchBar onSearch={() => {}} />
+        <SearchBar
+          onSearch={query => {
+            navigate({ pathname: '/community/search', search: `?${createSearchParams({ q: query })}` });
+          }}
+        />
       </div>
-      <div className={styles.login}>
-        <Button variant="secondary" size="md">
-          <UserOutlined /> Login
-        </Button>
-      </div>
+      <Link to="/profile" className={styles.user}>
+        Welcome, {user?.username}.
+      </Link>
     </div>
   );
 };
