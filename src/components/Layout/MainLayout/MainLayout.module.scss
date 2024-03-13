@@ -1,0 +1,20 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.container {
+  display: flex;
+}
+
+.contentContainer {
+  width: 100%;
+  margin-top: 7.5rem;
+
+  @include breakpoint(md) {
+    margin-left: 20rem;
+  }
+
+  @include breakpoint(lg) {
+    margin-right: 24rem;
+    margin-left: 24rem;
+  }
+}
