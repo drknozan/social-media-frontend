@@ -42,3 +42,20 @@ export const createCommunity = async ({
 
   return response.data as Community;
 };
+
+export const getCommunities = async ({
+  query,
+  offset,
+  limit,
+}: {
+  query: string;
+  offset: string;
+  limit: string;
+}): Promise<{ result: Community[]; count: number }> => {
+  const response = await axios.get(
+    `http://localhost:3000/search/community?q=${query}&offset=${offset}&limit=${limit}`,
+    { withCredentials: true },
+  );
+
+  return response.data as { result: Community[]; count: number };
+};
