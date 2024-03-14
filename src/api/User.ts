@@ -3,6 +3,12 @@ import { Post } from '@src/types/Post';
 import axios from 'axios';
 import { User } from '@src/types/User';
 
+export const getUser = async (username: string): Promise<User> => {
+  const response = await axios.get(`http://localhost:3000/users/${username}`, { withCredentials: true });
+
+  return response.data;
+};
+
 export const getCurrentUserProfile = async (): Promise<Profile> => {
   const response = await axios.get(`http://localhost:3000/profile`, { withCredentials: true });
 
