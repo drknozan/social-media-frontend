@@ -5,6 +5,7 @@ import { useFetchCurrentUser } from '@hooks/useFetchCurrentUser';
 import { useLeaveCommunity } from '@hooks/useLeaveCommunity';
 import Alert from '@ui/Alert';
 import Button from '@ui/Button';
+import { isAxiosError } from 'axios';
 
 const CommunityCard = ({ name, description, createdAt, _count }: Community) => {
   const { data: currentUserData, isLoading: isUserDataLoading } = useFetchCurrentUser();
@@ -47,8 +48,8 @@ const CommunityCard = ({ name, description, createdAt, _count }: Community) => {
       >
         {currentUserData && isMember ? 'Leave' : 'Join'}
       </Button>
-      {joinError && <Alert type="error" message={joinError.message} />}
-      {leaveError && <Alert type="error" message={leaveError.message} />}
+      {joinError && isAxiosError(joinError) && <Alert type="error" message={joinError.response?.data.message} />}
+      {leaveError && isAxiosError(leaveError) && <Alert type="error" message={leaveError.response?.data.message} />}
     </div>
   );
 };
