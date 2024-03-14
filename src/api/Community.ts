@@ -26,3 +26,19 @@ export const leaveCommunity = async (communityName: string): Promise<Community> 
 
   return response.data;
 };
+
+export const createCommunity = async ({
+  communityName,
+  description,
+}: {
+  communityName: string;
+  description: string;
+}): Promise<Community> => {
+  const response = await axios.post(
+    'http://localhost:3000/community/create',
+    { communityName, description },
+    { withCredentials: true },
+  );
+
+  return response.data as Community;
+};
