@@ -37,6 +37,9 @@
 }
 
 .usersContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: $base-padding;
   margin-top: 1rem;
 

@@ -1,40 +1,55 @@
+import { logout } from '@store/slices/authSlice';
 import styles from './Sidebar.module.scss';
 import {
   FormOutlined,
+  HomeOutlined,
   LogoutOutlined,
-  MessageOutlined,
   NotificationOutlined,
   ProfileOutlined,
   SettingOutlined,
   TeamOutlined,
 } from '@ant-design/icons';
+import { AppDispatch } from '@store/store';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useQueryClient } from '@tanstack/react-query';
 
 const Sidebar = ({ showSidebar }: { showSidebar: boolean }) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const queryClient = useQueryClient();
+
   return (
     <>
       <div className={showSidebar ? styles.containerActive : styles.container}>
         <div className={styles.buttonGroupContainer}>
-          <button className={styles.menuButton}>
+          <Link to="/" className={styles.menuButton}>
+            <HomeOutlined style={{ fontSize: '1.7rem' }} /> Home
+          </Link>
+          <Link to="/post/create" className={styles.menuButton}>
             <FormOutlined style={{ fontSize: '1.7rem' }} /> New Post
-          </button>
-          <button className={styles.menuButton}>
+          </Link>
+          <Link to="/" className={styles.menuButton}>
             <ProfileOutlined style={{ fontSize: '1.7rem' }} /> Profile
-          </button>
-          <button className={styles.menuButton}>
+          </Link>
+          <Link to="/community/create" className={styles.menuButton}>
             <TeamOutlined style={{ fontSize: '1.7rem' }} /> Create Community
-          </button>
-          <button className={styles.menuButton}>
+          </Link>
+          <Link to="/" className={styles.menuButton}>
             <NotificationOutlined style={{ fontSize: '1.7rem' }} /> Notifications
-          </button>
-          <button className={styles.menuButton}>
-            <MessageOutlined style={{ fontSize: '1.7rem' }} /> Messages
-          </button>
-          <button className={styles.menuButton}>
+          </Link>
+          <Link to="/" className={styles.menuButton}>
             <SettingOutlined style={{ fontSize: '1.7rem' }} /> Settings
-          </button>
-          <button className={styles.menuButton}>
+          </Link>
+          <Link
+            to="/login"
+            className={styles.menuButton}
+            onClick={() => {
+              queryClient.removeQueries();
+              dispatch(logout());
+            }}
+          >
             <LogoutOutlined style={{ fontSize: '1.7rem' }} /> Logout
-          </button>
+          </Link>
         </div>
       </div>
     </>

@@ -1,3 +1,4 @@
+import styles from './FollowItem.module.scss';
 import { useFetchCurrentUser } from '@hooks/useFetchCurrentUser';
 import { useFollowUser } from '@hooks/useFollowUser';
 import { useUnfollowUser } from '@hooks/useUnfollowUser';
@@ -13,7 +14,8 @@ const FollowItem = ({ username }: { username: string }) => {
   const isFollowing = data?.followed.some(follow => follow.followed?.username === username);
 
   return (
-    <>
+    <div className={styles.user}>
+      <div className={styles.username}>{username}</div>
       <Button
         size="sm"
         variant="secondary"
@@ -26,7 +28,7 @@ const FollowItem = ({ username }: { username: string }) => {
         <Alert type="error" message={unFollowError.response?.data.message} />
       )}
       {userError && isAxiosError(userError) && <Alert type="error" message={userError.response?.data.message} />}
-    </>
+    </div>
   );
 };
 

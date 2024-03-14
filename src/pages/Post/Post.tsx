@@ -30,6 +30,8 @@ const Post = () => {
             content={data.content}
             createdAt={data.createdAt}
             user={data.user}
+            upvotes={data.upvotes}
+            downvotes={data.downvotes}
           />
           {data.comments?.map(comment => (
             <CommentItem

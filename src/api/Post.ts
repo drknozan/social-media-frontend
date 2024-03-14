@@ -34,3 +34,15 @@ export const createComment = async ({ slug, content }: { slug: string; content: 
 
   return response.data;
 };
+
+export const upvotePost = async (slug: string): Promise<Post> => {
+  const response = await axios.patch(`http://localhost:3000/post/${slug}/upvote`, null, { withCredentials: true });
+
+  return response.data;
+};
+
+export const downvotePost = async (slug: string): Promise<Post> => {
+  const response = await axios.patch(`http://localhost:3000/post/${slug}/downvote`, null, { withCredentials: true });
+
+  return response.data;
+};

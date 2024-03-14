@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: $base-margin;
+}
+
+.username {
+  margin-right: $base-margin;
+  color: $color-text-dark;
+  font-size: 1.4rem;
+  text-align: center;
+}

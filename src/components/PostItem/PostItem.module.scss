@@ -38,22 +38,9 @@
   background-color: $color-text-light;
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  margin-bottom: $base-margin;
-}
-
-.username {
-  margin-right: $base-margin;
-  color: $color-text-dark;
-  font-size: 1.4rem;
-  text-align: center;
-}
-
 .content {
   color: $color-text-dark;
-  font-size: 1.4rem;
+  font-size: $default-font-size;
   line-height: 1.5;
   margin-bottom: $base-margin;
   cursor: pointer;
@@ -61,5 +48,32 @@
 
 .date {
   color: $color-text-dark;
-  font-size: 1.4rem;
+  font-size: $default-font-size;
+}
+
+.voteContainer {
+  display: flex;
+  margin-top: $base-margin;
+  gap: $base-margin;
+  font-size: $default-font-size;
+  color: $color-primary;
+}
+
+.vote {
+  display: flex;
+  gap: 0.5rem;
+  border: 1px solid $color-grey-light;
+  padding: 0.5rem;
+  border-radius: 3px;
+  color: $color-primary;
+  font-size: 1.8rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
