@@ -22,25 +22,26 @@ const Post = () => {
     <div>
       {isLoading && <Loading />}
       {data && (
-        <PostItem
-          key={data.slug}
-          slug={data.slug}
-          title={data.title}
-          content={data.content}
-          createdAt={data.createdAt}
-          user={data.user}
-        />
-      )}
-      {data &&
-        data.comments?.map(comment => (
-          <CommentItem
-            id={comment.id}
-            key={comment.id}
-            user={comment.user}
-            content={comment.content}
-            createdAt={comment.createdAt}
+        <>
+          <PostItem
+            key={data.slug}
+            slug={data.slug}
+            title={data.title}
+            content={data.content}
+            createdAt={data.createdAt}
+            user={data.user}
           />
-        ))}
+          {data.comments?.map(comment => (
+            <CommentItem
+              id={comment.id}
+              key={comment.id}
+              user={comment.user}
+              content={comment.content}
+              createdAt={comment.createdAt}
+            />
+          ))}
+        </>
+      )}
       <CommentForm onSubmit={handleSubmit} />
       {isSuccess && <Alert type="success" message="Comment successfully shared" />}
       {postError && <Alert type="error" message={postError.message} />}

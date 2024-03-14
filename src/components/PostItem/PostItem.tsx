@@ -1,8 +1,7 @@
-import { PlusOutlined } from '@ant-design/icons';
-import Button from '@ui/Button';
 import styles from './PostItem.module.scss';
 import { Post } from '@src/types/Post';
 import { useNavigate } from 'react-router-dom';
+import FollowItem from '@components/FollowItem';
 
 const PostItem = ({ slug, title, content, createdAt, user, community }: Post) => {
   const navigate = useNavigate();
@@ -18,9 +17,7 @@ const PostItem = ({ slug, title, content, createdAt, user, community }: Post) =>
         <div className={styles.username} onClick={() => navigate(`/users/${user?.username}`)}>
           {user?.username}
         </div>
-        <Button size="sm" variant="secondary">
-          Follow <PlusOutlined />
-        </Button>
+        {user && <FollowItem username={user.username} />}
       </div>
       <p className={styles.content} onClick={() => navigate(`/post/${slug}`)}>
         {content}
