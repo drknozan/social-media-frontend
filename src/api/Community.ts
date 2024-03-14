@@ -59,3 +59,11 @@ export const getCommunities = async ({
 
   return response.data as { result: Community[]; count: number };
 };
+
+export const getTopCommunities = async (): Promise<Community[]> => {
+  const response = await axios.get(`http://localhost:3000/search/community?q=${''}&offset=${0}&limit=${10}`, {
+    withCredentials: true,
+  });
+
+  return response.data.result as Community[];
+};

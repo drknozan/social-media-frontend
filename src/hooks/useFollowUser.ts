@@ -6,8 +6,9 @@ export const useFollowUser = () => {
 
   return useMutation({
     mutationFn: followUser,
-    onSuccess: () => {
+    onSuccess: follow => {
       queryClient.invalidateQueries({ queryKey: ['profile'] });
+      queryClient.invalidateQueries({ queryKey: ['user', follow.followed?.username] });
     },
   });
 };
