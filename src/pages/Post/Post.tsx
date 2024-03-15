@@ -6,6 +6,7 @@ import Loading from '@components/Loading';
 import Alert from '@ui/Alert';
 import CommentForm from '@components/CommentForm';
 import { useCreateComment } from '@hooks/useCreateComment';
+import { isAxiosError } from 'axios';
 
 const Post = () => {
   const { slug } = useParams() as { slug: string };
@@ -29,6 +30,7 @@ const Post = () => {
             title={data.title}
             content={data.content}
             createdAt={data.createdAt}
+            community={data.community}
             user={data.user}
             upvotes={data.upvotes}
             downvotes={data.downvotes}
@@ -46,8 +48,10 @@ const Post = () => {
       )}
       <CommentForm onSubmit={handleSubmit} />
       {isSuccess && <Alert type="success" message="Comment successfully shared" />}
-      {postError && <Alert type="error" message={postError.message} />}
-      {commentError && <Alert type="error" message={commentError.message} />}
+      {postError && isAxiosError(postError) && <Alert type="error" message={postError.response?.data.message} />}
+      {commentError && isAxiosError(commentError) && (
+        <Alert type="error" message={commentError.response?.data.message} />
+      )}
     </div>
   );
 };

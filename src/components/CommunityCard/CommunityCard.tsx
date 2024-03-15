@@ -6,6 +6,7 @@ import { useLeaveCommunity } from '@hooks/useLeaveCommunity';
 import Alert from '@ui/Alert';
 import Button from '@ui/Button';
 import { isAxiosError } from 'axios';
+import formatDate from '@utils/formatDate';
 
 const CommunityCard = ({ name, description, createdAt, _count }: Community) => {
   const { data: currentUserData, isLoading: isUserDataLoading } = useFetchCurrentUser();
@@ -35,7 +36,7 @@ const CommunityCard = ({ name, description, createdAt, _count }: Community) => {
             <span>Members</span>
           </div>
           <div className={styles.creationInfo}>
-            <span className={styles.creationDate}>{createdAt?.toString()}</span>
+            <span className={styles.creationDate}>{createdAt && formatDate(createdAt)}</span>
             <span>Created at</span>
           </div>
         </div>

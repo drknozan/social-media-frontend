@@ -5,6 +5,7 @@ import { useUnfollowUser } from '@hooks/useUnfollowUser';
 import Alert from '@ui/Alert';
 import Button from '@ui/Button';
 import { isAxiosError } from 'axios';
+import { Link } from 'react-router-dom';
 
 const FollowItem = ({ username }: { username: string }) => {
   const { mutateAsync: followUserMutation, error: followError } = useFollowUser();
@@ -15,7 +16,9 @@ const FollowItem = ({ username }: { username: string }) => {
 
   return (
     <div className={styles.user}>
-      <div className={styles.username}>{username}</div>
+      <Link to={`/users/${username}`} className={styles.username}>
+        {username}
+      </Link>
       <Button
         size="sm"
         variant="secondary"

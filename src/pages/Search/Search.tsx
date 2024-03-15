@@ -5,6 +5,7 @@ import Loading from '@components/Loading';
 import Alert from '@components/ui/Alert';
 import Pagination from '@components/Pagination';
 import { useEffect, useState } from 'react';
+import { isAxiosError } from 'axios';
 
 const Search = () => {
   const [searchParams] = useSearchParams();
@@ -31,7 +32,7 @@ const Search = () => {
   return (
     <div>
       {isLoading && <Loading />}
-      {error && <Alert type="error" message={error.message} />}
+      {error && isAxiosError(error) && <Alert type="error" message={error.response?.data.message} />}
       {data && (
         <>
           {data.result.map(community => (

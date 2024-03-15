@@ -3,6 +3,7 @@ import PostItem from '@components/PostItem';
 import UserCard from '@components/UserCard';
 import Alert from '@components/ui/Alert';
 import { useFetchUser } from '@hooks/useFetchUser';
+import { isAxiosError } from 'axios';
 import { useParams } from 'react-router-dom';
 
 const User = () => {
@@ -13,7 +14,7 @@ const User = () => {
   return (
     <>
       {isLoading && <Loading />}
-      {error && <Alert type="error" message={error.message} />}
+      {error && isAxiosError(error) && <Alert type="error" message={error.response?.data.message} />}
       {data && (
         <>
           <UserCard username={data.username} _count={data._count} bio={data.bio} />

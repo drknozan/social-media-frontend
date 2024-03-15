@@ -7,6 +7,7 @@ import { useUpvotePost } from '@hooks/useUpvotePost';
 import { useDownvotePost } from '@hooks/useDownvotePost';
 import Alert from '@ui/Alert';
 import { isAxiosError } from 'axios';
+import formatDate from '@utils/formatDate';
 
 const PostItem = ({ slug, title, content, createdAt, user, community, upvotes, downvotes }: Post) => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const PostItem = ({ slug, title, content, createdAt, user, community, upvotes, d
       <p className={styles.content} onClick={() => navigate(`/post/${slug}`)}>
         {content}
       </p>
-      <div className={styles.date}>{createdAt?.toString()}</div>
+      <div className={styles.date}>{createdAt && formatDate(createdAt)}</div>
       {location.pathname.includes('post') && (
         <div className={styles.voteContainer}>
           <div className={styles.vote} onClick={() => upvotePostMutation(slug)}>

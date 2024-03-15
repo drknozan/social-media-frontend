@@ -5,8 +5,11 @@ import Alert from '@components/ui/Alert';
 import { isAxiosError } from 'axios';
 import { useFetchRecommendations } from '@hooks/useFollowRecommendations';
 import FollowItem from '@components/FollowItem';
+import { useNavigate } from 'react-router-dom';
 
 const Explore = () => {
+  const navigate = useNavigate();
+
   const { data: topCommunitiesData, error: topCommunitiesError } = useFetchTopCommunities();
   const { data: recommendationsData, error: recommendationsError } = useFetchRecommendations();
 
@@ -15,7 +18,13 @@ const Explore = () => {
       <h1>Top Communities</h1>
       <div className={styles.communitiesContainer}>
         {topCommunitiesData &&
-          topCommunitiesData.map(community => <Badge key={community.name} text={community.name} />)}
+          topCommunitiesData.map(community => (
+            <Badge
+              key={community.name}
+              text={community.name}
+              onClick={() => navigate(`/community/${community.name}`)}
+            />
+          ))}
       </div>
       <div className={styles.divider}></div>
       <h1>Users who you might know</h1>
