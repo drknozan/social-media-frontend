@@ -7,8 +7,10 @@ import Alert from '@ui/Alert';
 import Button from '@ui/Button';
 import { isAxiosError } from 'axios';
 import formatDate from '@utils/formatDate';
+import { useNavigate } from 'react-router-dom';
 
 const CommunityCard = ({ name, description, createdAt, _count }: Community) => {
+  const navigate = useNavigate();
   const { data: currentUserData, isLoading: isUserDataLoading } = useFetchCurrentUser();
   const { mutateAsync: joinCommunityMutation, error: joinError, isPending: isJoinPending } = useJoinCommunity();
   const { mutateAsync: leaveCommunityMutation, error: leaveError, isPending: isLeavePending } = useLeaveCommunity();
@@ -26,7 +28,9 @@ const CommunityCard = ({ name, description, createdAt, _count }: Community) => {
   return (
     <div className={styles.container}>
       <div className={styles.communityInfo}>
-        <h1 className={styles.communityName}>{name}</h1>
+        <h1 className={styles.communityName} onClick={() => navigate(`/community/${name}`)}>
+          {name}
+        </h1>
         <div className={styles.line}></div>
         <p className={styles.communityDescription}>{description}</p>
         <div className={styles.line}></div>

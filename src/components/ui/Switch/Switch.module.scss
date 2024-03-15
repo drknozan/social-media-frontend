@@ -1,0 +1,44 @@
+@import '../../../styles/variables';
+
+.switch {
+  position: relative;
+  width: 4rem;
+  height: 2.4rem;
+  display: inline-block;
+
+  .switchCheckbox {
+    display: none;
+  }
+
+  .switchSlider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: $color-grey-light;
+    border-radius: 2rem;
+    transition: 0.4s;
+  }
+
+  .switchSlider:before {
+    height: 1.8rem;
+    width: 1.8rem;
+    position: absolute;
+    left: 0.3rem;
+    bottom: 0.3rem;
+    content: '';
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  .switchCheckbox:checked + .switchSlider {
+    background-color: $color-primary;
+  }
+
+  .switchCheckbox:checked + .switchSlider:before {
+    transform: translateX(1.5rem);
+  }
+}

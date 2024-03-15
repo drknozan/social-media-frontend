@@ -37,7 +37,7 @@ const Sidebar = ({ showSidebar }: { showSidebar: boolean }) => {
           <Link to="/" className={styles.menuButton}>
             <NotificationOutlined style={{ fontSize: '1.7rem' }} /> Notifications
           </Link>
-          <Link to="/" className={styles.menuButton}>
+          <Link to="/settings" className={styles.menuButton}>
             <SettingOutlined style={{ fontSize: '1.7rem' }} /> Settings
           </Link>
           <Link

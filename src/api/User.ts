@@ -47,3 +47,10 @@ export const getFollowRecommendations = async (): Promise<User[]> => {
 
   return response.data;
 };
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const updateUser = async (values: any): Promise<Profile> => {
+  const response = await axios.put(`http://localhost:3000/profile/update`, { ...values }, { withCredentials: true });
+
+  return response.data;
+};

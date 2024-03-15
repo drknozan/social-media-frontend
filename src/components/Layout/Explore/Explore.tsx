@@ -29,7 +29,8 @@ const Explore = () => {
       <div className={styles.divider}></div>
       <h1>Users who you might know</h1>
       <div className={styles.usersContainer}>
-        {recommendationsData && recommendationsData.map(user => <FollowItem username={user.username} />)}
+        {recommendationsData &&
+          recommendationsData.map(user => <FollowItem key={user.username} username={user.username} />)}
       </div>
       {topCommunitiesError && isAxiosError(topCommunitiesError) && (
         <Alert type="error" message={topCommunitiesError?.response?.data.message} />

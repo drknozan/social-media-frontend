@@ -16,6 +16,7 @@ import Loading from '@components/Loading';
 import CreatePost from '@pages/CreatePost';
 import CreateCommunity from '@pages/CreateCommunity';
 import NotFound from '@pages/NotFound';
+import Settings from '@pages/Settings';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/users/:username',
         element: <User />,
+      },
+      {
+        path: '/settings',
+        element: <Settings />,
       },
       {
         path: '/community/:communityName',

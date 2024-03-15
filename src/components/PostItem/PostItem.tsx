@@ -18,7 +18,9 @@ const PostItem = ({ slug, title, content, createdAt, user, community, upvotes, d
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.communityName}>{community?.name}</h1>
+      <h1 className={styles.communityName} onClick={() => navigate(`/community/${community?.name}`)}>
+        {community?.name}
+      </h1>
       <h2 className={styles.title} onClick={() => navigate(`/post/${slug}`)}>
         {title}
       </h2>
