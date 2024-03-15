@@ -6,6 +6,7 @@ import { RootState } from '@store/store';
 import { useDeleteComment } from '@hooks/useDeleteComment';
 import { isAxiosError } from 'axios';
 import Alert from '@ui/Alert';
+import { Link } from 'react-router-dom';
 
 interface CommentItemProps extends Comment {
   slug: string;
@@ -17,7 +18,9 @@ const CommentItem = ({ id, user, content, createdAt, slug }: CommentItemProps) =
 
   return (
     <div className={styles.container}>
-      <a className={styles.username}>{user.username}</a>
+      <Link to={`/users/${user.username}`} className={styles.username}>
+        {user.username}
+      </Link>
       <p className={styles.content}>{content}</p>
       <span className={styles.date}>{createdAt.toString()}</span>
       {currentUser?.username === user.username && (

@@ -3,7 +3,7 @@ import { Comment } from '@src/types/Comment';
 import axios from 'axios';
 
 export const getPost = async (slug: string): Promise<Post> => {
-  const response = await axios.get(`http://localhost:3000/post/${slug}`, { withCredentials: true });
+  const response = await axios.get(`http://localhost:3000/posts/${slug}`, { withCredentials: true });
 
   return response.data;
 };
@@ -18,7 +18,7 @@ export const createPost = async ({
   content: string;
 }): Promise<Post> => {
   const response = await axios.post(
-    'http://localhost:3000/post/create',
+    'http://localhost:3000/posts/create',
     { communityName, title, content },
     { withCredentials: true },
   );
