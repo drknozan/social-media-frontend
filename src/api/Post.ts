@@ -1,4 +1,5 @@
 import { Post } from '@src/types/Post';
+import { Comment } from '@src/types/Comment';
 import axios from 'axios';
 
 export const getPost = async (slug: string): Promise<Post> => {
@@ -31,6 +32,12 @@ export const createComment = async ({ slug, content }: { slug: string; content: 
     { content },
     { withCredentials: true },
   );
+
+  return response.data;
+};
+
+export const deleteComment = async ({ slug, commentId }: { slug: string; commentId: string }): Promise<Comment> => {
+  const response = await axios.delete(`http://localhost:3000/post/${slug}/${commentId}`, { withCredentials: true });
 
   return response.data;
 };

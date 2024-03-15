@@ -42,6 +42,7 @@ const Post = () => {
               user={comment.user}
               content={comment.content}
               createdAt={comment.createdAt}
+              slug={data.slug}
             />
           ))}
         </>

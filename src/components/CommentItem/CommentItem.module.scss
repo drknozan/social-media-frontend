@@ -2,6 +2,7 @@
 @import '../../styles/variables';
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: $base-padding;
@@ -40,4 +41,25 @@
   height: 0.1rem;
   background-color: $color-text-light;
   margin-bottom: $base-margin;
+}
+
+.delete {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: $default-font-size;
+  color: $color-error;
+  border: 1px solid $color-error;
+  padding: 0.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-error;
+    color: $color-text-light;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
