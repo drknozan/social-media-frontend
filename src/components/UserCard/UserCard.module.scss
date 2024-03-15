@@ -28,7 +28,7 @@
 }
 
 .userBio {
-  font-size: 1.4rem;
+  font-size: $default-font-size;
   color: $color-text-dark;
 }
 
@@ -40,7 +40,7 @@
 .followerInfo {
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
+  font-size: $default-font-size;
   color: $color-text-dark;
 }
 
@@ -53,7 +53,7 @@
 .followedInfo {
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
+  font-size: $default-font-size;
   color: $color-text-dark;
 }
 
@@ -67,7 +67,7 @@
   display: flex;
   flex-direction: column;
   color: $color-text-dark;
-  font-size: 1.4rem;
+  font-size: $default-font-size;
 }
 
 .creationDate {

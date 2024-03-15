@@ -15,6 +15,7 @@ import { getCurrentUser } from '@store/slices/authSlice';
 import Loading from '@components/Loading';
 import CreatePost from '@pages/CreatePost';
 import CreateCommunity from '@pages/CreateCommunity';
+import NotFound from '@pages/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
         element: <CreateCommunity />,
       },
     ],
+    errorElement: <NotFound />,
   },
   {
     path: '/login',

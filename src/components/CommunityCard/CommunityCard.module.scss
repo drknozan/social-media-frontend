@@ -28,7 +28,7 @@
 }
 
 .communityDescription {
-  font-size: 1.4rem;
+  font-size: $default-font-size;
   color: $color-text-dark;
 }
 
@@ -40,7 +40,7 @@
 .membersInfo {
   display: flex;
   flex-direction: column;
-  font-size: 1.4rem;
+  font-size: $default-font-size;
   color: $color-text-dark;
 }
 
@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   color: $color-text-dark;
-  font-size: 1.4rem;
+  font-size: $default-font-size;
 }
 
 .creationDate {

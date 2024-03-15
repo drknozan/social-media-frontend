@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary;
+
+  h1 {
+    font-size: 8rem;
+    color: $color-text-light;
+  }
+
+  p {
+    font-size: $default-font-size;
+    color: $color-text-light;
+  }
+}
