@@ -25,7 +25,7 @@ const Header = ({ setShowSidebar }: { setShowSidebar: Dispatch<SetStateAction<bo
           }}
         />
       </div>
-      <Link to="/profile" className={styles.user}>
+      <Link to="/settings" className={styles.user}>
         Welcome, {user?.username}.
       </Link>
     </div>

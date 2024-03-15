@@ -28,7 +28,7 @@ export const createPost = async ({
 
 export const createComment = async ({ slug, content }: { slug: string; content: string }): Promise<Comment> => {
   const response = await axios.post(
-    `http://localhost:3000/post/${slug}/comment`,
+    `http://localhost:3000/posts/${slug}/comment`,
     { content },
     { withCredentials: true },
   );
@@ -37,19 +37,19 @@ export const createComment = async ({ slug, content }: { slug: string; content: 
 };
 
 export const deleteComment = async ({ slug, commentId }: { slug: string; commentId: string }): Promise<Comment> => {
-  const response = await axios.delete(`http://localhost:3000/post/${slug}/${commentId}`, { withCredentials: true });
+  const response = await axios.delete(`http://localhost:3000/posts/${slug}/${commentId}`, { withCredentials: true });
 
   return response.data;
 };
 
 export const upvotePost = async (slug: string): Promise<Post> => {
-  const response = await axios.patch(`http://localhost:3000/post/${slug}/upvote`, null, { withCredentials: true });
+  const response = await axios.patch(`http://localhost:3000/posts/${slug}/upvote`, null, { withCredentials: true });
 
   return response.data;
 };
 
 export const downvotePost = async (slug: string): Promise<Post> => {
-  const response = await axios.patch(`http://localhost:3000/post/${slug}/downvote`, null, { withCredentials: true });
+  const response = await axios.patch(`http://localhost:3000/posts/${slug}/downvote`, null, { withCredentials: true });
 
   return response.data;
 };
